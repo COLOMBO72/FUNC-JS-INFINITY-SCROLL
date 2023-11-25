@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.image__wrapper {
+  width: 20%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image__wrapper img {
+  width: 100%;
+  object-fit: cover;
+  height: 70%;
+}
+.Images__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.scrollnumb {
+  position: fixed;
+}
