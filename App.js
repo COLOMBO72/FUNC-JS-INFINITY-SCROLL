@@ -23,6 +23,14 @@ export default function App() {
     setCurrentPage(currentPage - 1);
   };
 
+  const onUpper = (e) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
@@ -42,6 +50,12 @@ export default function App() {
 
   return (
     <MyContext.Provider value={state} currentPage={currentPage}>
+      <div className="arrow_up" onClick={(e) => onUpper(e)}>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-up-01-512.png"
+          alt="arrow_up"
+        />
+      </div>
       <div className="App">
         <h1>{state.length}</h1>
       </div>
@@ -49,9 +63,6 @@ export default function App() {
         {state.map((item) => (
           <Item object={item} />
         ))}
-      </div>
-      <div className="pagination">
-        <b>{currentPage}</b>
       </div>
     </MyContext.Provider>
   );
